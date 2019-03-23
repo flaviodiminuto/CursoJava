@@ -1,6 +1,6 @@
 package br.com.microlins.interfaces;
 
-public interface IPilha<E> {
+public interface IFila<E> {
 
 	E pegarPrimeiro();
 	E consultarPrimeiro();
