@@ -2,7 +2,9 @@ package br.com.microlins;
 
 import java.util.Date;
 
-public class Atividade {
+import br.com.microlins.interfaces.IAtividade;
+
+public class Atividade implements IAtividade{
 
 	private Pessoa pessoa;
 	private Date horaInicio;
@@ -39,6 +41,11 @@ public class Atividade {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	@Override 
+	public String resumoAtividade() {
+		return String.format("Nome: %s%nData início: %s%nDuração do exercício: %s%nDescrição do que foi realizado: %s",this.pessoa.getNome(),horaInicio, horaFim, descricao);
 	}
 
 }
