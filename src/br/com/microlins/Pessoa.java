@@ -9,6 +9,15 @@ public class Pessoa implements IPessoa{
 	private double peso;
 	private double altura;
 
+	public Pessoa(){}
+
+	public Pessoa(String nome, int idade, double peso, double altura) {
+		this.nome = nome;
+		this.idade = idade;
+		this.peso = peso;
+		this.altura = altura;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -43,7 +52,7 @@ public class Pessoa implements IPessoa{
 
 	@Override
 	public String exibirDados() {
-		return String.format("Nome: %s%nIdade: %s%nPeso: %s%nAltura: %s", nome, idade, peso, altura);
+		return String.format("Nome: %s%nIdade: %s%nPeso: %s%nAltura: %s%nIMC: %s", nome, idade, peso, altura, String.valueOf(calculaImc()));
 	}
 
 	@Override
