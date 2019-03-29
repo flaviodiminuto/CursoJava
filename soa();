@@ -1,0 +1,65 @@
+[33mcommit 33b028137de6bd08f7b5a0a1528cd0d71794d3bb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Wed Mar 27 22:36:03 2019 -0300
+
+    Interfaces finalizadas - Escrevendo o Menu
+
+[33mcommit 8594398c4803c1e18aaf84f39b6d8f74f978353d[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 15:51:21 2019 -0300
+
+    interface AtividadePessoa implementada
+
+[33mcommit 5b5c2e3454b302289975db8074f11820f3950716[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 15:45:21 2019 -0300
+
+    Adicionada Classe de leitura de arquivos
+
+[33mcommit b89840120ce9d11d224f11a1113468bc0b0e909e[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 15:26:06 2019 -0300
+
+    Implementadas algumas interfaces
+
+[33mcommit b6e587fb856300d17cd01dcd4ff2d152ba5e6229[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 13:54:52 2019 -0300
+
+    Inicio atividade 2019-03-23
+
+[33mcommit ea6e1adc41ddc5467f670db8301e6572afc56d92[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 13:18:30 2019 -0300
+
+    Adicionados arquivos do projeto
+
+[33mcommit 36a1a21122e0cc5499648d0c8b0423a7f46d8442[m
+Author: Flávio da Silva Santos <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 13:10:48 2019 -0300
+
+    Update README.md
+
+[33mcommit 4b671ec858555291419522b0d56cdc5c7d64b34d[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 13:05:51 2019 -0300
+
+    Ajuste do texto (git clone)
+
+[33mcommit 54804461ee589776d4216cbdcf5c6a088ce2b917[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 13:02:30 2019 -0300
+
+    Comandos git
+
+[33mcommit 222540298d72e0879d0d69972f620446de29e12b[m
+Author: flaviodiminuto <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 12:55:15 2019 -0300
+
+    Primeiro commit (teste)
+
+[33mcommit c1f98456d265901cc00fee6d2775d7df025de3be[m[33m ([m[1;31morigin/developer[m[33m)[m
+Author: Flávio da Silva Santos <flavio.diminuto@outlook.com>
+Date:   Sat Mar 23 12:36:14 2019 -0300
+
+    Initial commit
