@@ -1,114 +1,270 @@
 package aula20190323;
 
-import implementacoes.IFilaStringImplementacao;
+import br.com.microlins.Atividade;
+import br.com.microlins.AtividadePessoa;
+import br.com.microlins.Pessoa;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
 
 public class Principal {
+    private static final Scanner scan =new Scanner(System.in);
+    private static final int SAIR = 3;
+    private static List<Pessoa> pessoas = new ArrayList<>();
+    private static List<AtividadePessoa> atividadePessoas = new ArrayList<>();
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy 00:00:00");
 
-	/*public static void main(String[] args) {
-		
-		
-		// ArrayList
-		List<String> lista = new ArrayList<>();
-		//ctrl + shit + o -> importa dependencias
-		
-		lista.add("Java");
-		lista.add(1, "Python");
-		lista.add("PHP");
-		
-		
-		System.out.println(lista.contains("Java"));
-		
-		lista.equals(new ArrayList<String>());
-		
+    public static void main(String[] args) {
+        int idCategoria;
+        do {
+            idCategoria = exibeMenu();
+            switch (idCategoria) {
+                case 1:
+                    selecionaOperacaoPessoa();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    System.out.println("Fechando o programa\nAte logo!");
+                    break;
+                default:
+                    System.out.println(new StringBuffer()
+                            .append("A categoria ")
+                            .append(idCategoria)
+                            .append(" Nao existe"));
+            }
+        } while (idCategoria != SAIR);
+    }
 
-		Iterator iteratorLista = lista.iterator();
-		while(iteratorLista.hasNext())
-			System.out.println(iteratorLista.next());
-		
-		String livroPython = lista.get(1);
-		
-		lista.isEmpty(); // esta vazio
-		lista.remove(2);
-		
-		lista.size(); // tamanho
-		
-		iteratorLista = lista.iterator();
-		while(iteratorLista.hasNext())
-			System.out.println(iteratorLista.next());
-		
-		
-		// LinkedList
-		lista = new LinkedList<>();
-		
-		lista.add("Java");
-		lista.add(1, "Python");
-		lista.add("PHP");
-		
-		
-		System.out.println(lista.contains("Java"));
-		
-		lista.equals(new ArrayList<String>());
-		
+    private static int exibeMenu() {
+        final int sair = 4;
+        int acao;
+        boolean valido;
+        do {
+            valido = true;
+            escreveCabecalho("Menu Inicial");
+            System.out.println("Informe a categoria");
+            System.out.println("1- Pessoa");
+            System.out.println("2- Atividade");
+            System.out.println("3- Atividades por Pessoa");
+            System.out.println(sair + "- Sair");
+            acao = lerNumeroInteiro();
 
-		iteratorLista = lista.iterator();
-		while(iteratorLista.hasNext())
-			System.out.println(iteratorLista.next());
-		
-		livroPython = lista.get(1);
-		
-		lista.isEmpty(); // esta vazio
-		lista.remove(2);
-		
-		lista.size(); // tamanho
-		
-		iteratorLista = lista.iterator();
-		while(iteratorLista.hasNext())
-			System.out.println(iteratorLista.next());
-		
-		// Vector
-		System.out.println("Vector --");
-		lista = new Vector<String>();
-		
-		
-		//LinkedList - Queue
-		Queue<String> fila = new LinkedList<String>();
-		fila.add("Veja");
-		fila.add("Abril");
-		fila.add("Fechou");
-		
-		
-		System.out.println(fila.peek()); // consulta o primeiro que vai sair
-		System.out.println();
-		
-		
-		
-		iteratorLista = fila.iterator();
-		while(iteratorLista.hasNext())
-			System.out.println(iteratorLista.next());
-		
-		System.out.println();
-		System.out.println(fila.poll()); // consulta e remove o primeiro que vai sair
-		System.out.println();
-		
-		iteratorLista = fila.iterator();
-		while(iteratorLista.hasNext())
-			System.out.println(iteratorLista.next());
-		
-		System.out.println();
-		
-		// PriorityQueue
-		fila = new PriorityQueue<String>();
-		// mesma coisa do LinkedList
-		
-		// Stack
-		Stack<String> stackFila = new Stack<>();
-		stackFila.push("Corsa"); //adiciona por ultimo
-		stackFila.push("Fox");
-		
-		stackFila.peek();
-		stackFila.pop(); // igual ao poll da LinkedList e PriorityQueue
-		
-		
-	}*/
-	
+            switch (acao) {
+                case 1:
+                    selecionaOperacaoPessoa();
+                    break;
+                case 2:
+                    selecionaOperacaoAtividade();
+                    break;
+                case sair:
+                    valido = true;
+                    break;
+                default:
+                    System.out.println("Opcao " + acao + " nao e valida!\n");
+                    valido = false;
+            }
+        } while (!valido);
+        return acao;
+    }
+
+    private static void selecionaOperacaoPessoa() {
+        int sair = 4;
+        int operacaoCategoriaPessoa;
+        do {
+            escreveCabecalho("Categoria Pessoa");
+            System.out.println("OPERACOES");
+            System.out.println("1- Cadastrar");
+            System.out.println("2- Exibir dados");
+            System.out.println("3- Calcular IMC");
+            System.out.println(sair + "- Voltar");
+            operacaoCategoriaPessoa = lerNumeroInteiro();
+            switch (operacaoCategoriaPessoa) {
+                case 1:
+                    pessoas.add(operacaoCadastrarPessoa());
+                    break;
+                case 2:
+                    if (pessoas.size() > 0)
+                        operacaoExibirDadosPessoa();
+                    else
+                        solicitarCadastroPessoa();
+                    break;
+                case 3:
+                    if (pessoas.size() > 0)
+                        operacaoCalculaIMCPessoa();
+                    else
+                        solicitarCadastroPessoa();
+                    break;
+                default:
+                    System.out.println("Operacao " + operacaoCategoriaPessoa + " nao e valida");
+            }
+        } while (operacaoCategoriaPessoa != sair);
+    }
+
+    private static void solicitarCadastroPessoa() {
+        System.out.println("Por favor, cadastre ao menos uma pessoa");
+    }
+
+    private static Pessoa operacaoCadastrarPessoa() {
+        String nome;
+        int idade;
+        Double peso, altura;
+
+        escreveCabecalho("Cadastrando Pessoa");
+        System.out.println("Informe o nome: ");
+        nome = lerTexto();
+        System.out.println("Informe a idade: ");
+        idade = lerNumeroInteiro();
+        System.out.println("Informe o peso: ");
+        peso = lerNumeroReal();
+        System.out.println("Informe a altura: ");
+        altura = lerNumeroReal();
+
+        return new Pessoa(nome, idade, peso, altura);
+    }
+
+    private static int lerNumeroInteiro() {
+            return Integer.parseInt(scan.nextLine());
+    }
+
+    private static Double lerNumeroReal() {
+        return Double.parseDouble(scan.nextLine());
+    }
+
+    private static String lerTexto() {
+       return scan.nextLine();
+    }
+
+    private static Date lerData() throws ParseException {
+            return sdf.parse(lerTexto());
+
+    }
+    private static void operacaoExibirDadosPessoa() {
+        Pessoa pessoa = selecionaPessoa();
+        System.out.println(pessoa.exibirDados());
+    }
+
+    private static void operacaoCalculaIMCPessoa() {
+        Pessoa pessoa = selecionaPessoa();
+        System.out.println(new StringBuilder()
+                .append("Nome: ")
+                .append(pessoa.getNome())
+                .append("\tIMC: ")
+                .append(pessoa.calculaImc()));
+    }
+
+    private static Pessoa selecionaPessoa() {
+        int indicePessoa;
+        if (pessoas.isEmpty()) {
+            solicitarCadastroPessoa();
+            return null;
+        }
+        do {
+            escreveCabecalho("Pessoas");
+            for (Pessoa pessoa : pessoas) {
+                System.out.println(String.format("Pessoa: %d%n%s", pessoas.indexOf(pessoa), pessoa.getNome()));
+                System.out.println("------------------------------------");
+            }
+            System.out.println("Indique o numero de uma Pessoa da Lista acima: ");
+            indicePessoa = lerNumeroInteiro();
+        } while (indicePessoa < 0 || indicePessoa > pessoas.size());
+        return pessoas.get(indicePessoa);
+    }
+
+    private static void selecionaOperacaoAtividade() {
+        int opt;
+        int voltar = 9;
+        AtividadePessoa atividadePessoa = new AtividadePessoa();
+        Pessoa pessoa;
+        Atividade atividade;
+        do {
+            escreveCabecalho("Atividades");
+            System.out.println("1- Adicionar Atividade");
+            System.out.println("2- Vincular atividade a uma pessoa");
+            System.out.println("3- Consultar todas as atividades da pessoa");
+            System.out.println("4- remover atividade");
+            System.out.println("5- Consultar total de atividades");
+            System.out.println("6- Recuperar ultima atividade");
+            System.out.println("7- Limpar lista de atividades");
+            System.out.println("8- Consultar ultima atividade realizada");
+            System.out.println("9- Voltar");
+
+            opt = lerNumeroInteiro();
+
+            switch (opt) {
+                case 1:
+                    atividade = adicionaAtividade();
+                    if (atividade == null) continue;
+                    else
+                        atividadePessoa.getAtividades().add(atividade);
+                    if (atividade.getPessoa() != null && !atividadePessoa.getPessoas().contains(atividade.getPessoa())) {
+                        atividadePessoa.getPessoas().add(atividade.getPessoa());
+                    }
+                    System.out.println("Atividade adicionada");
+                    break;
+
+            }
+        } while (opt != voltar);
+    }
+
+    private static Atividade adicionaAtividade() {
+        Atividade novaAtividade;
+        Date horaInicio;
+        Date horaFim;
+        String descricao;
+        int opt;
+
+        System.out.println("Informe a descricao da atividade");
+        descricao = lerTexto();
+        System.out.println("Informe a data e hora do Inicio (Formato 01/01/01 00:00:00)");
+        try {
+            horaInicio = lerData();
+        } catch (ParseException e) {
+            errorMessage("Hora de inicio em formato nao reconhecido");
+            return null;
+        }
+        System.out.println("Informe a data e hora de Fim (Formato 01/01/01 00:00:00)");
+        try {
+            horaFim = lerData();
+        } catch (ParseException e) {
+            errorMessage("Hora de fim em formato nao reconhecido");
+            return null;
+        }
+
+        novaAtividade = new Atividade(new Pessoa(), horaInicio, horaFim, descricao);
+
+        System.out.println("Deseja associar atividade a uma pessoa?");
+        System.out.println("1- Sim");
+        System.out.println("2- Nao");
+        opt = lerNumeroInteiro();
+
+        switch (opt) {
+            case 1:
+                novaAtividade.setPessoa(selecionaPessoa());
+                break;
+            default:
+                System.out.println("Opcao nao reconhecida");
+        }
+        System.out.println("Atividade nova adicionada");
+
+        return novaAtividade;
+    }
+
+    private static void errorMessage(String mensagem) {
+        System.out.println("\nFalha\n" + mensagem);
+    }
+
+    private static Date retornaDataDeString(String dataString) throws ParseException {
+        return sdf.parse(dataString);
+    }
+
+    private static void escreveCabecalho(String titulo) {
+        System.out.println("------------------------------------");
+        System.out.println("\t" + titulo);
+        System.out.println("------------------------------------");
+    }
 }

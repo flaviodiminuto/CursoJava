@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9bd28bf0-95f5-4ac5-825b-8af6933191f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aula20190323/ProgramaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aula20190323/ProgramaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/microlins/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/microlins/Atividade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/microlins/AtividadePessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/microlins/AtividadePessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aula20190323/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aula20190323/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aula20190323/ProgramaPrincipal.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,31 +19,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/aula20190323/ProgramaPrincipal.java">
+        <entry file="file://$PROJECT_DIR$/src/aula20190323/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
+            <state relative-caret-position="110">
+              <caret line="150" column="52" lean-forward="true" selection-start-line="150" selection-start-column="52" selection-end-line="150" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3568#3569#0" expanded="true" />
-                <element signature="e#3645#3646#0" expanded="true" />
-                <element signature="e#8366#8367#0" expanded="true" />
-                <element signature="e#8424#8425#0" expanded="true" />
+                <element signature="e#3255#3256#0" expanded="true" />
+                <element signature="e#3332#3333#0" expanded="true" />
+                <element signature="e#4462#4463#0" expanded="true" />
+                <element signature="e#4518#4519#0" expanded="true" />
+                <element signature="e#4572#4573#0" expanded="true" />
+                <element signature="e#4612#4613#0" expanded="true" />
+                <element signature="e#4649#4650#0" expanded="true" />
+                <element signature="e#8987#8988#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/microlins/AtividadePessoa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>atividades</find>
+      <find>cabecalho</find>
+      <find>Falha</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,6 +57,7 @@
         <option value="$PROJECT_DIR$/src/br/com/microlins/AtividadePessoa.java" />
         <option value="$PROJECT_DIR$/src/br/com/microlins/Atividade.java" />
         <option value="$PROJECT_DIR$/src/aula20190323/ProgramaPrincipal.java" />
+        <option value="$PROJECT_DIR$/src/aula20190323/Principal.java" />
       </list>
     </option>
   </component>
@@ -67,16 +69,18 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="276" />
-    <option name="y" value="-14" />
+    <option name="x" value="275" />
+    <option name="y" value="-15" />
     <option name="width" value="1550" />
-    <option name="height" value="868" />
+    <option name="height" value="869" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,8 +127,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -143,7 +145,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ProgramaPrincipal">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="FilaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aula20190323.FilaTest" />
       <module name="CursoJava" />
@@ -157,8 +159,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProgramaPrincipal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="aula20190323.ProgramaPrincipal" />
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aula20190323.Principal" />
       <module name="CursoJava" />
       <extension name="coverage">
         <pattern>
@@ -170,9 +172,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.FilaTest" />
+      <item itemvalue="Application.Principal" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProgramaPrincipal" />
+        <item itemvalue="Application.Principal" />
         <item itemvalue="Application.FilaTest" />
       </list>
     </recent_temporary>
@@ -190,23 +196,33 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23123324" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49776787" visible="true" weight="0.23458445" />
+      <window_info id="Structure" order="1" sideWeight="0.50223213" side_tool="true" visible="true" weight="0.23458445" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36633664" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36633664" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3281471" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -274,6 +290,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/aula20190323/ProgramaPrincipal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="252" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="252" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3568#3569#0" expanded="true" />
+            <element signature="e#3645#3646#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/microlins/AtividadePessoa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -281,16 +309,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aula20190323/ProgramaPrincipal.java">
+    <entry file="file://$PROJECT_DIR$/src/aula20190323/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
+        <state relative-caret-position="110">
+          <caret line="150" column="52" lean-forward="true" selection-start-line="150" selection-start-column="52" selection-end-line="150" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3568#3569#0" expanded="true" />
-            <element signature="e#3645#3646#0" expanded="true" />
-            <element signature="e#8366#8367#0" expanded="true" />
-            <element signature="e#8424#8425#0" expanded="true" />
+            <element signature="e#3255#3256#0" expanded="true" />
+            <element signature="e#3332#3333#0" expanded="true" />
+            <element signature="e#4462#4463#0" expanded="true" />
+            <element signature="e#4518#4519#0" expanded="true" />
+            <element signature="e#4572#4573#0" expanded="true" />
+            <element signature="e#4612#4613#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
+            <element signature="e#8987#8988#0" expanded="true" />
           </folding>
         </state>
       </provider>
