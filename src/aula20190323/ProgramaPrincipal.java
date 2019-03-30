@@ -139,6 +139,10 @@ public class ProgramaPrincipal {
 
     private static Pessoa selecionaPessoa() {
         int indicePessoa;
+        if(pessoas.isEmpty()){
+            selecionaPessoa();
+            return null;
+        }
         do {
             escreveCabecalho("Pessoas");
             for (Pessoa pessoa : pessoas) {
