@@ -11,6 +11,15 @@ public class Atividade implements IAtividade{
 	private Date horaFim;
 	private String descricao;
 
+	public Atividade(){}
+
+	public Atividade(Pessoa pessoa, Date horaInicio, Date horaFim, String descricao) {
+		this.pessoa = pessoa;
+		this.horaInicio = horaInicio;
+		this.horaFim = horaFim;
+		this.descricao = descricao;
+	}
+
 	public Pessoa getPessoa() {
 		return pessoa;
 	}

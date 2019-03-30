@@ -8,6 +8,22 @@ import br.com.microlins.interfaces.IAtividadePessoa;
 public class AtividadePessoa implements IAtividadePessoa{
 	List<Pessoa> pessoas = new ArrayList<>();
 	List<Atividade> atividades = new ArrayList<>();
+
+	public List<Pessoa> getPessoas() {
+		return this.pessoas;
+	}
+
+	public void setPessoas(List<Pessoa> pessoas) {
+		this.pessoas = pessoas;
+	}
+
+	public List<Atividade> getAtividades() {
+		return this.atividades;
+	}
+
+	public void setAtividades(List<Atividade> atividades) {
+		this.atividades = atividades;
+	}
 	
 	@Override
 	public boolean gravarAtividade(Atividade atividade) {
