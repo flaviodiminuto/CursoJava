@@ -4,11 +4,13 @@ import br.com.microlins.Atividade;
 import br.com.microlins.AtividadePessoa;
 import br.com.microlins.Pessoa;
 
-import java.text.ParseException;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Principal {
-    private static final Scanner scan =new Scanner(System.in);
+    private static final Scanner scan = new Scanner(System.in);
     private static final int SAIR = 3;
     private static AtividadePessoa atividadePessoas = new AtividadePessoa();
 
@@ -16,15 +18,6 @@ public class Principal {
     public static void main(String[] args) {
         int idCategoria;
         Locale.setDefault(new Locale("pt", "BR"));
-
-        atividadePessoas.getAtividades().add(new Atividade(new Pessoa(),Calendar.getInstance().getTime(),Calendar.getInstance().getTime()  ,"correr"));
-        atividadePessoas.getAtividades().add(new Atividade(new Pessoa(),Calendar.getInstance().getTime(),Calendar.getInstance().getTime(),"passear"));
-        atividadePessoas.getAtividades().add(new Atividade(new Pessoa(),Calendar.getInstance().getTime(),Calendar.getInstance().getTime(),"academia"));
-        atividadePessoas.getAtividades().add(new Atividade(new Pessoa(),Calendar.getInstance().getTime(),Calendar.getInstance().getTime(),"estudar"));
-
-        atividadePessoas.getPessoas().add(new Pessoa("Flavio",30,60,2));
-        atividadePessoas.getPessoas().add(new Pessoa("Sheila",27,50,1.8));
-        atividadePessoas.getPessoas().add(new Pessoa("Carlos",30,20,1.6));
 
         do {
             idCategoria = exibeMenu();
@@ -132,7 +125,7 @@ public class Principal {
         System.out.println("Informe a altura: ");
         altura = lerNumeroReal();
 
-        Pessoa pessoa =  new Pessoa(nome, idade, peso, altura);
+        Pessoa pessoa = new Pessoa(nome, idade, peso, altura);
         atividadePessoas.getPessoas().add(pessoa);
         return pessoa;
     }
@@ -146,12 +139,13 @@ public class Principal {
         System.out.println("Informe Minuto(s):");
         minuto = scan.nextInt();
         data.set(Calendar.HOUR, hora);
-        data.set(Calendar.MINUTE,minuto);
+        data.set(Calendar.MINUTE, minuto);
 
         return data.getTime();
     }
+
     private static int lerNumeroInteiro() {
-            return scan.nextInt();
+        return scan.nextInt();
     }
 
     private static Double lerNumeroReal() {
@@ -160,23 +154,23 @@ public class Principal {
 
     private static String lerTexto() {
         scan.nextLine();// Consume newline left-over
-       return scan.nextLine();
+        return scan.nextLine();
     }
 
     private static void operacaoExibirDadosPessoa() {
         Pessoa pessoa = selecionaPessoa();
-        if(pessoa != null)
+        if (pessoa != null)
             System.out.println(pessoa.exibirDados());
     }
 
     private static void operacaoCalculaIMCPessoa() {
         Pessoa pessoa = selecionaPessoa();
-        if(pessoa != null)
-        System.out.println(new StringBuilder()
-                .append("Nome: ")
-                .append(pessoa.getNome())
-                .append("\tIMC: ")
-                .append(pessoa.calculaImc()));
+        if (pessoa != null)
+            System.out.println(new StringBuilder()
+                                       .append("Nome: ")
+                                       .append(pessoa.getNome())
+                                       .append("\tIMC: ")
+                                       .append(pessoa.calculaImc()));
     }
 
     private static Pessoa selecionaPessoa() {
@@ -218,10 +212,10 @@ public class Principal {
             switch (opt) {
                 case 1:
                     atividade = adicionaAtividade();
-                    if (atividade == null){
+                    if (atividade == null) {
                         System.out.println("Falha ao adicionar atividade");
-                        continue;}
-                    else
+                        continue;
+                    } else
                         atividadePessoas.getAtividades().add(atividade);
                     if (atividade.getPessoa() != null && !atividadePessoas.getPessoas().contains(atividade.getPessoa())) {
                         atividadePessoas.getPessoas().add(atividade.getPessoa());
@@ -237,20 +231,20 @@ public class Principal {
                     removerAtividadePessoa();
                     break;
                 case 5:
-                    System.out.println(String.format("Total de atividades registradas: %02d",consultarTotalAtividades()));
+                    System.out.println(String.format("Total de atividades registradas: %02d", consultarTotalAtividades()));
                     break;
                 case 6:
                     System.out.println(new StringBuilder()
-                            .append("Ultima atividade adicionada\n")
-                            .append(atividadePessoas.getAtividades().get(atividadePessoas.getAtividades().size()-1)));
+                                               .append("Ultima atividade adicionada\n")
+                                               .append(atividadePessoas.getAtividades().get(atividadePessoas.getAtividades().size() - 1)));
                     break;
                 case 7:
                     atividadePessoas.getAtividades().clear();
                     break;
                 case 8:
                     System.out.println(new StringBuilder()
-                            .append("Ultima atividade realizada\n")
-                            .append(ultimaAtividadeRealizada().resumoAtividade()));
+                                               .append("Ultima atividade realizada\n")
+                                               .append(ultimaAtividadeRealizada().resumoAtividade()));
                     break;
                 case voltar:
                     break;
@@ -262,8 +256,8 @@ public class Principal {
 
     private static Atividade ultimaAtividadeRealizada() {
         Atividade ultima = atividadePessoas.getAtividades().get(0);
-        for(Atividade atividade : atividadePessoas.getAtividades()){
-            if(atividade.getHoraFim().after( ultima.getHoraFim())) ultima = atividade;
+        for (Atividade atividade : atividadePessoas.getAtividades()) {
+            if (atividade.getHoraFim().after(ultima.getHoraFim())) ultima = atividade;
         }
         return ultima;
     }
@@ -281,22 +275,22 @@ public class Principal {
         Pessoa pessoa = selecionaPessoa();
         int quantidadeAtividades = 0;
         System.out.println("Informe a pessoa que deseja consutar as atividades");
-        for(Atividade atividade : atividadePessoas.getAtividades()){
-            if(atividade.getPessoa().equals(pessoa)) {
-                System.out.println(atividade.resumoAtividade()+"\n");
+        for (Atividade atividade : atividadePessoas.getAtividades()) {
+            if (atividade.getPessoa().equals(pessoa)) {
+                System.out.println(atividade.resumoAtividade() + "\n");
                 quantidadeAtividades++;
             }
         }
-        if(quantidadeAtividades>0)
-            System.out.println(String.format("%s tem %02d atividades registradas ",pessoa.getNome(),quantidadeAtividades));
+        if (quantidadeAtividades > 0)
+            System.out.println(String.format("%s tem %02d atividades registradas ", pessoa.getNome(), quantidadeAtividades));
         else
             System.out.println("Nao ha atividades registradas para esta pessoa");
     }
 
     private static Atividade selecionaAtividade() {
         int indice;
-        for(int i = 0; i<atividadePessoas.getAtividades().size(); i++){
-            System.out.println("Atividade: "+i+"\n"+atividadePessoas.getAtividades().get(i).resumoAtividade());
+        for (int i = 0; i < atividadePessoas.getAtividades().size(); i++) {
+            System.out.println("Atividade: " + i + "\n" + atividadePessoas.getAtividades().get(i).resumoAtividade());
         }
         System.out.println("Selecione o numero da atividade que deseja");
         indice = scan.nextInt();
@@ -326,23 +320,22 @@ public class Principal {
         System.out.println("2- Nao");
         opt = lerNumeroInteiro();
 
-        if(opt ==1) {
+        if (opt == 1) {
             addPessoaDaAtividade(novaAtividade);
             System.out.println("Atividade adicionada");
-        }else{
-                System.out.println("Opcao nao reconhecida");
-                atividadePessoas.getAtividades().add(novaAtividade);
-                System.out.println("Atividade salva sem adicionar pessoa");
+        } else {
+            System.out.println("Opcao nao reconhecida");
+            atividadePessoas.getAtividades().add(novaAtividade);
+            System.out.println("Atividade salva sem adicionar pessoa");
         }
         return novaAtividade;
     }
 
     private static void addPessoaDaAtividade(Atividade atividade) {
-        if(atividadePessoas.getPessoas().isEmpty()) {
-            addPessoaDaAtividade(new Atividade(solicitarCadastroPessoa(),atividade.getHoraInicio(),atividade.getHoraFim(),atividade.getDescricao()));
+        if (atividadePessoas.getPessoas().isEmpty()) {
+            addPessoaDaAtividade(new Atividade(solicitarCadastroPessoa(), atividade.getHoraInicio(), atividade.getHoraFim(), atividade.getDescricao()));
             System.out.println("nao ha pessoa cadastrada para adicionar a atiidade");
-        }
-        else {
+        } else {
             atividade.setPessoa(selecionaPessoa());
         }
     }
