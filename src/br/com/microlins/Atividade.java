@@ -1,5 +1,6 @@
 package br.com.microlins;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import br.com.microlins.interfaces.IAtividade;
@@ -10,6 +11,7 @@ public class Atividade implements IAtividade{
 	private Date horaInicio;
 	private Date horaFim;
 	private String descricao;
+	private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
 	public Atividade(){}
 
@@ -54,7 +56,10 @@ public class Atividade implements IAtividade{
 
 	@Override 
 	public String resumoAtividade() {
-		return String.format("Nome: %s%nData início: %s%nDuração do exercício: %s%nDescrição do que foi realizado: %s",this.pessoa.getNome(),horaInicio, horaFim, descricao);
+		String retorno = String.format( "Data início: %s%nDuração do exercício: %s%nDescrição da atividade: %s",sdf.format(horaInicio), sdf.format(horaFim), descricao);
+		if(this.pessoa != null){
+			return retorno;}
+		else{
+			return "Nome: "+this.pessoa.getNome()+ "\n"+retorno;}
 	}
-
 }
